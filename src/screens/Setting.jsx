@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
+import Animated, { FadeInUp, BounceIn, FadeInLeft } from 'react-native-reanimated';
 
 export default function Setting() {
   //Route
@@ -24,16 +25,16 @@ export default function Setting() {
           {/* Comptes */}
           <View>
             <Text className="text-[1.1rem] text-[#949494] ml-6">Comptes</Text>
-            <View className="bg-white flex flex-row my-4 mx-5 p-6 rounded-[15] gap-[13]">
+            <Animated.View entering={BounceIn.delay(400).springify()} className="bg-white flex flex-row my-4 mx-5 p-6 rounded-[15] gap-[13]">
               <Ionicons name="person-add-sharp" size={24} color="black" />
               <Text className="text-[1.1rem]">Ajouter un autre compte</Text>
-            </View>
+            </Animated.View>
           </View>
 
           {/* Partager */}
           <View className="mt-3">
             <Text className="text-[1.1rem] text-[#949494] ml-6">Partager</Text>
-            <View className="bg-white my-4 mx-5 p-6 rounded-[15] gap-[13]">
+            <Animated.View entering={FadeInUp.delay(800).springify()} className="bg-white my-4 mx-5 p-6 rounded-[15] gap-[13]">
               <View className=" flex flex-row gap-[13]">
                 <Ionicons name="share-social-sharp" size={24} color="black" />
                 <Text className="text-[1.1rem]">
@@ -47,7 +48,7 @@ export default function Setting() {
                   Utiliser le code promotionnel
                 </Text>
               </View>
-            </View>
+            </Animated.View>
           </View>
 
           {/* Supports */}
